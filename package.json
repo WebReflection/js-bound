@@ -1,6 +1,6 @@
 {
   "name": "js-bound",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A utility to simplify binding methods to references",
   "author": "Andrea Giammarchi",
   "license": "MIT",
