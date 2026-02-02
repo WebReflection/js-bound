@@ -1,5 +1,7 @@
 # js-bound
 
+[![build status](https://github.com/WebReflection/js-bound/actions/workflows/node.js.yml/badge.svg)](https://github.com/WebReflection/js-bound/actions) [![Coverage Status](https://coveralls.io/repos/github/WebReflection/js-bound/badge.svg?branch=main)](https://coveralls.io/github/WebReflection/js-bound?branch=main)
+
 A utility to simplify binding methods to references.
 
 ```js
