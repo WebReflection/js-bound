@@ -1,0 +1,44 @@
+{
+  "name": "js-bound",
+  "version": "0.0.0",
+  "description": "A utility to simplify binding methods to references",
+  "author": "Andrea Giammarchi",
+  "license": "MIT",
+  "type": "module",
+  "module": "./index.js",
+  "main": "./index.js",
+  "files": [
+    "index.js",
+    "cached.js",
+    "direct.js",
+    "get.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./cached": "./cached.js",
+    "./direct": "./direct.js",
+    "./get": "./get.js",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "coverage": "mkdir -p ./coverage; c8 report --reporter=text-lcov > ./coverage/lcov.info",
+    "test": "c8 node --expose-gc ./test/index.js"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "c8": "^10.1.3"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebReflection/js-bound.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WebReflection/js-bound/issues"
+  },
+  "homepage": "https://github.com/WebReflection/js-bound#readme"
+}
