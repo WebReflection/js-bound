@@ -14,6 +14,9 @@ class Handler extends Map {
     }
     return bound;
   }
+  set(..._) {
+    throw new Error('Invalid operation');
+  }
 }
 
 const proxies = new WeakMap;

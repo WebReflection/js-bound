@@ -38,12 +38,20 @@ let obj = {
 };
 
 (function test() {
-  let { a, b } = bound(obj, true);
+  let o = bound(obj, true);
+  try {
+    o.c = 1;
+    assert(false, 'Invalid operation');
+  } catch (e) {
+    // console.log(e);
+  }
+  assert(o === bound(obj, true), 'same proxy');
+  let { a, b } = o;
   assert(bound(obj, true).a === a, 'cached bound');
   a();
   b();
-  a = b = null;
   collect?.();
+  setTimeout(nullify, TIMEOUT);
 }());
 
 function nullify() {
@@ -52,7 +60,15 @@ function nullify() {
 }
 
 function noCache() {
-  let { a } = bound(obj);
+  let o = bound(obj);
+  try {
+    o.c = 1;
+    assert(false, 'Invalid operation');
+  } catch (e) {
+    // console.log(e);
+  }
+  assert(o !== bound(obj), 'different proxy');
+  let { a } = o;
   a();
   obj = a = null;
   collect?.();
@@ -63,5 +79,3 @@ function finalize() {
   collect?.();
   setTimeout(console.log, TIMEOUT, 'done');
 }
-
-setTimeout(nullify, TIMEOUT);
