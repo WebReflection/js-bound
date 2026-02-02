@@ -28,7 +28,7 @@ const reference = { method() { return this } };
 const { method } = bound(reference, true);
 
 // the following assertion is true
-console.assert(method === bound(reference).method);
+console.assert(method === bound(reference, true).method);
 ```
 
 ### Exports
